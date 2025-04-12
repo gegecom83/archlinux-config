@@ -231,6 +231,20 @@ sudo systemctl enable --now fstrim.timer
 sudo timedatectl set-ntp true
 ```
 
+## Check for errors
+
+Check if any systemd services have failed:
+
+```bash
+systemctl --failed
+```
+
+Look for errors in the log files located in /var/log/, as well as high priority errors from the systemd log:
+
+```bash
+journalctl -p 3 -xb
+```
+
 ## Base installation complete
 
 Link to the installation and configuration procedure for i3 on Arch according to my preferences below (if needed):
