@@ -85,6 +85,7 @@ nano /etc/pacman.conf # Enable multilib repository for 32-bit library support, t
 > [...]
 > [multilib]
 > Include = /etc/pacman.d/mirrorlist
+> 
 > [...]
 > 
 
