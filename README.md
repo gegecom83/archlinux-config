@@ -245,6 +245,35 @@ Look for errors in the log files located in /var/log/, as well as high priority 
 journalctl -p 3 -xb
 ```
 
+Arch Linux guest instances in VMware sometimes come up with the boot error message:
+
+```bash
+piix4_smbus 0000.00.07.0: SMBus base address uninitialized…
+```
+
+This error is being caused because VMware doesn’t actually provide that level interface for CPU access.
+
+How to fix it:
+
+```bash
+sudo nano /etc/modprobe.d/blacklist.conf
+```
+
+add the line:
+
+```bash
+blacklist i2c-piix4
+```
+
+To (re-)generate initramfs images based on all existing presets:
+
+```bash
+mkinitcpio -P
+```
+```bash
+reboot
+```
+
 ## Base installation complete
 
 Link to the installation and configuration procedure for i3 on Arch according to my preferences below (if needed):
