@@ -74,7 +74,7 @@ arch-chroot /mnt # Chroot in the new installed system's base on the root partiti
 
 ```bash
 pacman -S vim nano # Install my favorite editor
-nano /etc/pacman.conf # Enable the "color" and "parallel downloads" options in pacman
+nano /etc/pacman.conf # Enable multilib repository for 32-bit library support, the "color" and "parallel downloads" options in pacman
 ```
 
 > [...]  
@@ -82,6 +82,9 @@ nano /etc/pacman.conf # Enable the "color" and "parallel downloads" options in p
 > [...]  
 > VerbosePkgLists  
 > ParallelDownloads = 10  
+> [...]
+> [multilib]
+> Include = /etc/pacman.d/mirrorlist
 > [...]
 
 ### Language/Region configuration
