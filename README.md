@@ -157,8 +157,8 @@ bootctl install
 nano /boot/loader/loader.conf
 ```
 
-> default arch.conf  
-> timeout 0  
+> timeout 3  
+> default arch.conf   
 > console-mode max  
 > editor no
 
