@@ -73,7 +73,7 @@ arch-chroot /mnt # Chroot in the new installed system's base on the root partiti
 ### Configure pacman
 
 ```bash
-pacman -S nano # Install my favorite editor
+pacman -S vim nano # Install my favorite editor
 nano /etc/pacman.conf # Enable the "color" and "parallel downloads" options in pacman
 ```
 
