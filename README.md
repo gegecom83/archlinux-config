@@ -81,11 +81,10 @@ nano /etc/pacman.conf # Enable multilib repository for 32-bit library support, t
 > Color  
 > [...]  
 > VerbosePkgLists  
-> ParallelDownloads = 10  
-> [...]
-> [multilib]
-> Include = /etc/pacman.d/mirrorlist
-> 
+> ParallelDownloads = 10   
+> [...]  
+> [multilib]   
+> Include = /etc/pacman.d/mirrorlist   
 > [...]
 
 ### Language/Region configuration
