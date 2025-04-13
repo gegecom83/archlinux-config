@@ -28,7 +28,7 @@ sudo pacman -S  xfce4 xfce4-goodies pavucontrol gvfs xarchiver xdg-user-dirs xdg
 ### Configure start for Xfce
 
 ```bash
-sudo pacman -S lightdm  # a display manager lightweight - low memory usage and high performance.
+sudo pacman -S lightdm-gtk-greeter # a display manager lightweight - low memory usage and high performance.
 sudo systemctl enable lightdm.service # LightDM will be started at boot.
 ```
 
