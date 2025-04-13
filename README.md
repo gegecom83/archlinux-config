@@ -277,6 +277,6 @@ reboot
 
 ## Base installation complete
 
-Link to the installation and configuration procedure for i3 on Arch according to my preferences below (if needed):
+Link to the installation and configuration procedure for desktop environment on Arch according to my preferences below (if needed):
 
 - [i3](https://github.com/Antiz96/Linux-Desktop/blob/main/Arch-Linux/i3.md)
