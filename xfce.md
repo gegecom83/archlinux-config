@@ -41,7 +41,7 @@ reboot
 
 ```bash
 sudo pacman -S firefox btop file-roller galculator fwupd fastfetch power-profiles-daemon p7zip unrar gspell xdg-desktop-portal-gtk
-sudo pacman -S --asdeps gnome-keyring gnu-free-fonts ttf-dejavu ttf-liberation ttf-nerd-fonts-symbols noto-fonts-emoji adobe-source-code-pro-fonts # Optional dependencies I need for the above packages
+sudo pacman -S --asdeps gnome-keyring gnu-free-fonts ttf-dejavu ttf-nerd-fonts-symbols xdg-utils # Optional dependencies I need for the above packages
 sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs
 ```
 
