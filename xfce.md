@@ -37,6 +37,74 @@ sudo systemctl enable lightdm.service # LightDM will be started at boot.
 ```bash
 reboot
 ```
+
+## Pacman Mirrorlist
+[Pacman Mirrorlist Generator](https://archlinux.org/mirrorlist/)
+
+```bash
+sudo nano /etc/pacman.d/mirrorlist
+```
+```bash
+##
+## Arch Linux repository mirrorlist
+## Generated on 2025-04-13
+##
+
+## France
+Server = http://mirror.archlinux.ikoula.com/archlinux/$repo/os/$arch
+Server = https://elda.asgardius.company/archlinux/$repo/os/$arch
+Server = http://mirror.bakertelekom.fr/Arch/$repo/os/$arch
+Server = https://mirror.bakertelekom.fr/Arch/$repo/os/$arch
+Server = http://fr.mirrors.cicku.me/archlinux/$repo/os/$arch
+Server = https://fr.mirrors.cicku.me/archlinux/$repo/os/$arch
+Server = http://mirror.cyberbits.eu/archlinux/$repo/os/$arch
+Server = https://mirror.cyberbits.eu/archlinux/$repo/os/$arch
+Server = http://archlinux.datagr.am/$repo/os/$arch
+Server = https://mirrors.eric.ovh/arch/$repo/os/$arch
+Server = http://mirrors.gandi.net/archlinux/$repo/os/$arch
+Server = https://mirrors.gandi.net/archlinux/$repo/os/$arch
+Server = http://archmirror.hogwarts.fr/$repo/os/$arch
+Server = https://archmirror.hogwarts.fr/$repo/os/$arch
+Server = http://mirror.its-tps.fr/archlinux/$repo/os/$arch
+Server = https://mirror.its-tps.fr/archlinux/$repo/os/$arch
+Server = http://mirror.jordanrey.me/archlinux/$repo/os/$arch
+Server = https://mirror.jordanrey.me/archlinux/$repo/os/$arch
+Server = https://mirrors.jtremesay.org/archlinux/$repo/os/$arch
+Server = https://arch.juline.tech/$repo/os/$arch
+Server = http://mirror.lastmikoi.net/archlinux/$repo/os/$arch
+Server = http://archlinux.mailtunnel.eu/$repo/os/$arch
+Server = https://archlinux.mailtunnel.eu/$repo/os/$arch
+Server = https://f.matthieul.dev/mirror/archlinux/$repo/os/$arch
+Server = http://mir.archlinux.fr/$repo/os/$arch
+Server = http://mirrors.celianvdb.fr/archlinux/$repo/os/$arch
+Server = https://mirrors.celianvdb.fr/archlinux/$repo/os/$arch
+Server = http://arch.nimukaito.net/$repo/os/$arch
+Server = https://arch.nimukaito.net/$repo/os/$arch
+Server = http://mirror.oldsql.cc/archlinux/$repo/os/$arch
+Server = https://mirror.oldsql.cc/archlinux/$repo/os/$arch
+Server = http://archlinux.mirrors.ovh.net/archlinux/$repo/os/$arch
+Server = https://archlinux.mirrors.ovh.net/archlinux/$repo/os/$arch
+Server = http://mirror.peeres-telecom.fr/archlinux/$repo/os/$arch
+Server = https://mirror.peeres-telecom.fr/archlinux/$repo/os/$arch
+Server = http://mirror.rznet.fr/archlinux/$repo/os/$arch
+Server = https://mirror.rznet.fr/archlinux/$repo/os/$arch
+Server = https://mirror.smayzy.ovh/archlinux/$repo/os/$arch
+Server = http://mirror.spaceint.fr/archlinux/$repo/os/$arch
+Server = https://mirror.spaceint.fr/archlinux/$repo/os/$arch
+Server = http://mirrors.standaloneinstaller.com/archlinux/$repo/os/$arch
+Server = https://mirror.sysa.tech/archlinux/$repo/os/$arch
+Server = http://arch.syxpi.fr/arch/$repo/os/$arch
+Server = https://arch.syxpi.fr/arch/$repo/os/$arch
+Server = https://mirror.thekinrar.fr/archlinux/$repo/os/$arch
+Server = http://mirror.theo546.fr/archlinux/$repo/os/$arch
+Server = https://mirror.theo546.fr/archlinux/$repo/os/$arch
+Server = http://mirror.trap.moe/archlinux/$repo/os/$arch
+Server = https://mirror.trap.moe/archlinux/$repo/os/$arch
+Server = http://ftp.u-strasbg.fr/linux/distributions/archlinux/$repo/os/$arch
+Server = https://mirror.wormhole.eu/archlinux/$repo/os/$arch
+Server = http://arch.yourlabs.org/$repo/os/$arch
+Server = https://arch.yourlabs.org/$repo/os/$arch
+```
 ## Install additional packages
 
 ```bash
