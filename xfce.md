@@ -5,7 +5,7 @@
 - For regular computers:
 
 ```bash
-sudo pacman -S xorg-server mesa # install nvidia instead of mesa if you have an Nvidia GPU.
+sudo pacman -S xorg-server mesa
 ```
 
 - For VMware computers:
@@ -41,7 +41,7 @@ reboot
 
 ```bash
 sudo pacman -S firefox btop file-roller galculator fwupd fastfetch power-profiles-daemon p7zip unrar gspell xdg-desktop-portal-gtk lightdm-gtk-greeter-settings
-sudo pacman -S --asdeps gnome-keyring gnu-free-fonts ttf-dejavu ttf-nerd-fonts-symbols xdg-utils # Optional dependencies I need for the above packages
+sudo pacman -S  gnu-free-fonts ttf-dejavu ttf-nerd-fonts-symbols xdg-utils # Optional dependencies I need for the above packages
 sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs
 ```
 
