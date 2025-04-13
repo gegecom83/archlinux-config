@@ -187,8 +187,9 @@ systemctl enable systemd-boot-update.service
 ### Install and enable Network Manager
 
 ```bash
-pacman -S networkmanager # Install "networkmanager" to manage my network connection
+pacman -S networkmanager iwd # Install "networkmanager" "iwd" to manage my network connection
 systemctl enable NetworkManager # Autostart NetworkManager at boot
+systemctl enable iwd.service # Autostart Wi-Fi at boot
 ```
 
 ## Exit the system and reboot the computer
