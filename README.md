@@ -184,7 +184,7 @@ nano /boot/loader/entries/arch-fallback.conf
 systemctl enable systemd-boot-update.service
 ```
 
-### Install and enable Network Manager
+### Install and enable Network
 
 ```bash
 pacman -S networkmanager iwd # Install "networkmanager" "iwd" to manage my network connection
