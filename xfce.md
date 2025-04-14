@@ -22,14 +22,14 @@ sudo pacman -S gtkmm3 # if copy and paste between host and guest does not work p
 Xfce with a few additional packages for a base system according to my personal preferences.
 
 ```bash
-sudo pacman -S  xfce4 xfce4-goodies mugshot gvfs xarchiver xdg-user-dirs xdg-utils jack2 pipewire pipewire-audio pipewire-pulse openssh
+sudo pacman -S  xfce4 xfce4-goodies mugshot pavucontrol gvfs xarchiver xdg-user-dirs xdg-utils jack2 pipewire pipewire-audio pipewire-pulse openssh
  ```
 
 ### Configure start for Xfce
 
 ```bash
 sudo pacman -S lightdm-gtk-greeter # a display manager lightweight - low memory usage and high performance.
-sudo systemctl enable lightdm.service # LightDM will be started at boot.
+sudo systemctl enable lightdm.service # lightdm will be started at boot.
 ```
 
 ## Reboot
@@ -105,13 +105,41 @@ Server = https://mirror.wormhole.eu/archlinux/$repo/os/$arch
 Server = http://arch.yourlabs.org/$repo/os/$arch
 Server = https://arch.yourlabs.org/$repo/os/$arch
 ```
+
 ## Install additional packages
 
 ```bash
-sudo pacman -S firefox network-manager-applet btop file-roller galculator fwupd fastfetch power-profiles-daemon p7zip unrar gspell xdg-desktop-portal-gtk lightdm-gtk-greeter-settings alacarte
-sudo pacman -S ttf-dejavu ttf-nerd-fonts-symbols ttf-liberation ttf-meslo-nerd noto-fonts-emoji adobe-source-code-pro-fonts otf-font-awesome ttf-droid # Optional dependencies I need for the above packages
-sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs
+sudo pacman -S firefox network-manager-applet btop file-roller galculator fwupd fastfetch power-profiles-daemon p7zip unrar gspell xdg-desktop-portal-gtk lightdm-gtk-greeter-settings alacarte gimp libreoffice-fresh
+sudo pacman -S ttf-dejavu ttf-nerd-fonts-symbols ttf-liberation ttf-meslo-nerd noto-fonts-emoji adobe-source-code-pro-fonts otf-font-awesome ttf-droid # optional dependencies I need for the above packages.
+sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs # tools to manage additional or foreign filesystems such as NTFS or exFAT.
+sudo pacman -S gstreamer gst-plugins-bad gst-plugins-base gst-plugins-ugly gst-plugin-pipewire gstreamer-vaapi gst-plugins-good gst-libav libva-mesa-driver mesa-vdpau # plugins and video acceleration drivers for full multimedia compatibility.
 ```
+## Custom appearance
+
+```bash
+sudo pacman -S papirus-icon-theme qt5ct
+```
+- qt5ct:
+
+```bash
+nano ~/.profile
+```
+
+```sh
+export QT_QPA_PLATFORMTHEME="qt5ct"
+```
+
+```sh
+nano ~/.bash_profile
+```
+
+```sh
+[[ -f ~/.profile ]] && . ~/.profile
+```
+
+- How to change Firefox min/max/close buttons:
+  
+By default (?), firefox uses Client Side Decorations. These cannot be managed by the window manager because CSD window decorations are drawn by the application. Fortunately, you can revert firefox to regular titlebars (in Customize, select the "Title Bar" option).
 
 ## AUR Helper
 
