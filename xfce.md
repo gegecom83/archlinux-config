@@ -44,6 +44,7 @@ reboot
 ```bash
 sudo nano /etc/pacman.d/mirrorlist
 ```
+
 ```bash
 ##
 ## Arch Linux repository mirrorlist
@@ -114,32 +115,6 @@ sudo pacman -S ttf-dejavu ttf-nerd-fonts-symbols ttf-liberation ttf-meslo-nerd n
 sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs # tools to manage additional or foreign filesystems such as NTFS or exFAT.
 sudo pacman -S gstreamer gst-plugins-bad gst-plugins-base gst-plugins-ugly gst-plugin-pipewire gstreamer-vaapi gst-plugins-good gst-libav libva-mesa-driver mesa-vdpau # plugins and video acceleration drivers for full multimedia compatibility.
 ```
-## Custom appearance
-
-```bash
-sudo pacman -S papirus-icon-theme qt5ct
-```
-- qt5ct:
-
-```bash
-nano ~/.profile
-```
-
-```sh
-export QT_QPA_PLATFORMTHEME="qt5ct"
-```
-
-```sh
-nano ~/.bash_profile
-```
-
-```sh
-[[ -f ~/.profile ]] && . ~/.profile
-```
-
-- How to change Firefox min/max/close buttons:
-  
-By default (?), firefox uses Client Side Decorations. These cannot be managed by the window manager because CSD window decorations are drawn by the application. Fortunately, you can revert firefox to regular titlebars (in Customize, select the "Title Bar" option).
 
 ## AUR Helper
 
@@ -164,9 +139,43 @@ Style to be used for the systray applet icon. Valid values are the available sty
 ```bash
 arch-update --gen-config
 ```
+
 ```bash
 nano ~/.config/arch-update/arch-update.conf
 ```
+
 ```bash
 TrayIconStyle=light
 ```
+
+## Custom appearance
+
+```bash
+sudo pacman -S papirus-icon-theme qt5ct
+```
+
+```bash
+yay adwaita-qt5
+```
+
+- qt5ct:
+
+```bash
+nano ~/.profile
+```
+
+```bash
+export QT_QPA_PLATFORMTHEME="qt5ct"
+```
+
+```bash
+nano ~/.bash_profile
+```
+
+```bash
+[[ -f ~/.profile ]] && . ~/.profile
+```
+
+- How to change Firefox min/max/close buttons:
+  
+By default (?), firefox uses Client Side Decorations. These cannot be managed by the window manager because CSD window decorations are drawn by the application. Fortunately, you can revert firefox to regular titlebars (in Customize, select the "Title Bar" option).
