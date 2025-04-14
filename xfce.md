@@ -108,7 +108,7 @@ Server = https://arch.yourlabs.org/$repo/os/$arch
 ## Install additional packages
 
 ```bash
-sudo pacman -S firefox network-manager-applet btop file-roller galculator fwupd fastfetch power-profiles-daemon p7zip unrar gspell xdg-desktop-portal-gtk lightdm-gtk-greeter-settings
+sudo pacman -S firefox network-manager-applet btop file-roller galculator fwupd fastfetch power-profiles-daemon p7zip unrar gspell xdg-desktop-portal-gtk lightdm-gtk-greeter-settings alacarte
 sudo pacman -S ttf-dejavu ttf-nerd-fonts-symbols ttf-liberation ttf-meslo-nerd noto-fonts-emoji adobe-source-code-pro-fonts otf-font-awesome ttf-droid # Optional dependencies I need for the above packages
 sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs
 ```
