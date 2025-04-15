@@ -200,9 +200,8 @@ systemctl enable systemd-boot-update.service
 ### Install and enable Network
 
 ```bash
-pacman -S networkmanager iwd # Install "networkmanager" "iwd" to manage my network connection
+pacman -S networkmanager # Install "networkmanager" to manage my network connection
 systemctl enable NetworkManager # Autostart NetworkManager at boot
-systemctl enable iwd.service # Autostart Wi-Fi at boot
 ```
 
 ## Exit the system and reboot the computer
@@ -210,7 +209,16 @@ systemctl enable iwd.service # Autostart Wi-Fi at boot
 ```bash
 exit # Get out of the chroot
 umount -l /mnt # Umount the /mnt mounted point
+```
+
+```bash
 reboot # Reboot the computer to boot into the fresh Arch install
+```
+
+## Connect to Wi-Fi (if needed)
+
+```bash
+nmcli device wifi connect your_wifi_name password your_password_wifi
 ```
 
 ## Log in with the "regular" user previously created and install additional useful packages
