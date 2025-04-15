@@ -6,7 +6,39 @@ This is my personal routine to install Arch Linux
 
 ```bash
 loadkeys fr # Change Keyboard Layout
+```
+
+- Ethernet:
+- 
+```bash
 ping -c 4 archlinux.org # Check if I have access to the internet
+```
+
+- Wifi:
+
+```bash
+iwctl
+```
+
+```bash
+station wlan0 connect your_wifi_name
+```
+
+```bash
+your_password_wifi
+```
+
+```bash
+exit
+```
+
+```bash
+ping -c 4 archlinux.org # Check if I have access to the internet
+```
+
+- Time:
+
+```bash
 timedatectl set-ntp true # Enable NTP to synchronize time within the live environment
 timedatectl status # Check time status
 ```
@@ -203,7 +235,7 @@ reboot # Reboot the computer to boot into the fresh Arch install
 ## Log in with the "regular" user previously created and install additional useful packages
 
 ```bash
-sudo pacman -S devtools man-db bash-completion intel-ucode pacman-contrib # Additional useful packages and drivers. Install "amd-ucode" instead of "intel-ucode" if you have an AMD CPU
+sudo pacman -S devtools man-db man-pages bash-completion intel-ucode pacman-contrib # Additional useful packages and drivers. Install "amd-ucode" instead of "intel-ucode" if you have an AMD CPU
 ```
 
 ## Enable paccache (automatic cleaning of pacman cache)
