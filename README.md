@@ -8,14 +8,6 @@ This is my personal routine to install Arch Linux
 loadkeys fr # Change Keyboard Layout
 ```
 
-- Ethernet:
-- 
-```bash
-ping -c 4 archlinux.org # Check if I have access to the internet
-```
-
-- Wifi:
-
 ```bash
 iwctl
 ```
@@ -35,8 +27,6 @@ exit
 ```bash
 ping -c 4 archlinux.org # Check if I have access to the internet
 ```
-
-- Time:
 
 ```bash
 timedatectl set-ntp true # Enable NTP to synchronize time within the live environment
