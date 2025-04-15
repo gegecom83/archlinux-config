@@ -10,17 +10,8 @@ loadkeys fr # Change Keyboard Layout
 
 ```bash
 iwctl
-```
-
-```bash
 station wlan0 connect your_wifi_name
-```
-
-```bash
 your_password_wifi
-```
-
-```bash
 exit
 ```
 
