@@ -204,7 +204,7 @@ pacman -S networkmanager # Install "networkmanager" to manage my network connect
 systemctl enable NetworkManager # Autostart NetworkManager at boot
 ```
 
-### Install and setup Bluetooth support
+### Install and enable Bluetooth support
 
 ```bash
 sudo pacman -S bluez bluez-utils 
