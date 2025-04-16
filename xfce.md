@@ -138,7 +138,7 @@ Server = http://arch.yourlabs.org/$repo/os/$arch
 Server = https://arch.yourlabs.org/$repo/os/$arch
 ```
 
-## Install additional packages
+## Install additional packages (optional)
 
 ```bash
 sudo pacman -S firefox network-manager-applet btop file-roller galculator fwupd fastfetch power-profiles-daemon p7zip unrar gspell xdg-user-dirs-gtk xdg-desktop-portal-gtk lightdm-gtk-greeter-settings alacarte gimp libreoffice-fresh gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb claws-mail blueman
@@ -179,7 +179,7 @@ nano ~/.config/arch-update/arch-update.conf
 TrayIconStyle=light
 ```
 
-## Custom appearance
+## Custom appearance (optional)
 
 ```bash
 sudo pacman -S papirus-icon-theme qt5ct
