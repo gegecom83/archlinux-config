@@ -33,7 +33,7 @@ fdisk -l # Check the hard drives' name to select the one I want to install Arch 
 ### Partition scheme
 
 > EFI partition mounted on /boot --> 1G - FAT32  
-> Swap partition --> [8G](https://itsfoss.com/swap-size/) - SWAP
+> Swap partition --> [8G](https://itsfoss.com/swap-size/) - SWAP  
 > Root partition mounted on / --> Left free space - EXT4
 
 ### Partition the disk  
