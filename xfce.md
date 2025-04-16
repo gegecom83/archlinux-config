@@ -45,7 +45,7 @@ _Note for Intel integrated graphics users: Only Skylake and newer Intel CPUs (pr
 sudo pacman -S open-vm-tools
 sudo systemctl enable/start vmtoolsd.service
 sudo systemctl enable/start vmware-vmblock-fuse.service
-sudo pacman -S gtkmm3 # if copy and paste between host and guest does not work properly.
+sudo pacman -S gtkmm3 # if copy and paste between host and guest does not work properly
 ```
 
 ## Install Xfce
@@ -59,8 +59,8 @@ sudo pacman -S  xfce4 xfce4-goodies mugshot pavucontrol gvfs xarchiver xdg-user-
 ### Configure start for Xfce
 
 ```bash
-sudo pacman -S lightdm-gtk-greeter # a display manager lightweight - low memory usage and high performance.
-sudo systemctl enable lightdm.service # lightdm will be started at boot.
+sudo pacman -S lightdm-gtk-greeter # a display manager lightweight - low memory usage and high performance
+sudo systemctl enable lightdm.service # lightdm will be started at boot
 ```
 
 ## Reboot
@@ -141,10 +141,10 @@ Server = https://arch.yourlabs.org/$repo/os/$arch
 ## Install additional packages
 
 ```bash
-sudo pacman -S firefox network-manager-applet btop file-roller galculator fwupd fastfetch power-profiles-daemon p7zip unrar gspell xdg-desktop-portal-gtk lightdm-gtk-greeter-settings alacarte gimp libreoffice-fresh
-sudo pacman -S gnu-free-fonts ttf-dejavu terminus-font noto-fonts-emoji # optional dependencies I need for the above packages.
-sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs # tools to manage additional or foreign filesystems such as NTFS or exFAT.
-sudo pacman -S gstreamer gst-plugins-bad gst-plugins-base gst-plugins-ugly gst-plugin-pipewire gstreamer-vaapi gst-plugins-good gst-libav libva-mesa-driver mesa-vdpau # plugins and video acceleration drivers for full multimedia compatibility.
+sudo pacman -S firefox network-manager-applet btop file-roller galculator fwupd fastfetch power-profiles-daemon p7zip unrar gspell xdg-user-dirs-gtk xdg-desktop-portal-gtk lightdm-gtk-greeter-settings alacarte gimp libreoffice-fresh gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb claws-mail blueman
+sudo pacman -S gnu-free-fonts ttf-dejavu terminus-font noto-fonts-emoji # optional dependencies I need for the above packages
+sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs # tools to manage additional or foreign filesystems such as NTFS or exFAT
+sudo pacman -S gstreamer gst-plugins-bad gst-plugins-base gst-plugins-ugly gst-plugin-pipewire gstreamer-vaapi gst-plugins-good gst-libav libva-mesa-driver mesa-vdpau # plugins and video acceleration drivers for full multimedia compatibility
 ```
 
 ## AUR Helper
