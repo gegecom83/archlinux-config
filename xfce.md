@@ -145,7 +145,13 @@ sudo pacman -S firefox network-manager-applet htop file-roller galculator pragha
 sudo pacman -S gnu-free-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-droid ttf-opensans ttf-roboto ttf-liberation ttf-dejavu # optional dependencies I need for the above packages
 sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs # tools to manage additional or foreign filesystems such as NTFS or exFAT
 sudo pacman -S gstreamer gst-plugins-bad gst-plugins-base gst-plugins-ugly gst-plugin-pipewire gstreamer-vaapi gst-plugins-good gst-libav # plugins for multimedia
-sudo pacman -S power-profiles-daemon  # handles power profiles
+```
+
+## Manage power profiles (e.g. balanced, power-saver, performance)
+
+```bash
+sudo pacman -S power-profiles-daemon
+sudo systemctl enable/start power-profiles-daemon.service
 ```
 
 ## AUR Helper (optional)
