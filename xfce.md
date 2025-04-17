@@ -62,6 +62,7 @@ sudo pacman -S xfce4 xfce4-goodies mugshot pavucontrol gvfs xarchiver xdg-user-d
 sudo pacman -S lightdm-gtk-greeter # a display manager lightweight - low memory usage and high performance
 sudo systemctl enable lightdm.service # lightdm will be started at boot
 ```
+Reboot (should start Xfce automatically after logging)
 
 ```bash
 reboot
