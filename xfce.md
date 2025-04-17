@@ -56,14 +56,12 @@ Xfce with a few additional packages for a base system according to my personal p
 sudo pacman -S xfce4 xfce4-goodies mugshot pavucontrol gvfs xarchiver xdg-user-dirs xdg-utils pipewire pipewire-audio pipewire-pulse pipewire-jack openssh
  ```
 
-### Configure start for Xfce
+## Configure start Xfce
 
 ```bash
 sudo pacman -S lightdm-gtk-greeter # a display manager lightweight - low memory usage and high performance
 sudo systemctl enable lightdm.service # lightdm will be started at boot
 ```
-
-## Reboot
 
 ```bash
 reboot
