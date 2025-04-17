@@ -53,7 +53,7 @@ sudo pacman -S gtkmm3 # if copy and paste between host and guest does not work p
 Xfce with a few additional packages for a base system according to my personal preferences.
 
 ```bash
-sudo pacman -S  xfce4 xfce4-goodies mugshot pavucontrol gvfs xarchiver xdg-user-dirs xdg-utils jack2 pipewire pipewire-audio pipewire-pulse openssh
+sudo pacman -S  xfce4 xfce4-goodies mugshot pavucontrol gvfs xarchiver xdg-user-dirs xdg-utils pipewire pipewire-audio pipewire-pulse pipewire-jack openssh
  ```
 
 ### Configure start for Xfce
@@ -141,13 +141,14 @@ Server = https://arch.yourlabs.org/$repo/os/$arch
 ## Install additional packages (optional)
 
 ```bash
-sudo pacman -S firefox network-manager-applet btop file-roller galculator pragha fwupd fastfetch power-profiles-daemon p7zip unrar gspell xdg-user-dirs-gtk xdg-desktop-portal-gtk lightdm-gtk-greeter-settings alacarte gimp libreoffice-fresh gvfs-afc gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb claws-mail blueman
-sudo pacman -S gnu-free-fonts ttf-dejavu terminus-font noto-fonts-emoji # optional dependencies I need for the above packages
+sudo pacman -S firefox network-manager-applet htop file-roller galculator pragha fwupd fastfetch p7zip unrar gspell xdg-user-dirs-gtk xdg-desktop-portal-gtk lightdm-gtk-greeter-settings alacarte gimp libreoffice-fresh claws-mail blueman
+sudo pacman -S gnu-free-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-droid ttf-opensans ttf-roboto ttf-liberation ttf-dejavu # optional dependencies I need for the above packages
 sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs # tools to manage additional or foreign filesystems such as NTFS or exFAT
-sudo pacman -S gstreamer gst-plugins-bad gst-plugins-base gst-plugins-ugly gst-plugin-pipewire gstreamer-vaapi gst-plugins-good gst-libav libva-mesa-driver mesa-vdpau # plugins and video acceleration drivers for full multimedia compatibility
+sudo pacman -S gstreamer gst-plugins-bad gst-plugins-base gst-plugins-ugly gst-plugin-pipewire gstreamer-vaapi gst-plugins-good gst-libav # plugins for multimedia
+sudo pacman -S power-profiles-daemon  # handles power profiles
 ```
 
-## AUR Helper
+## AUR Helper (optional)
 
 ```bash
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
@@ -156,7 +157,7 @@ yay -Y --devel --save # track development packages
 sed -i 's/"sudoloop": false,/"sudoloop": true,/' ~/.config/yay/config.json  # prevents multiple password prompts
 ```
 
-## Arch-update
+## Arch-update (optional)
 
 ```bash
 yay arch-update
