@@ -2,12 +2,6 @@
 
 ## Install Xorg and graphical drivers
 
-- For regular computers:
-
-```bash
-sudo pacman -S xorg-server mesa
-```
-
 - For NVIDIA computers:
 
 _**Warning**: Please ensure your graphics card is supported by modern NVIDIA driver before installing._
@@ -42,7 +36,7 @@ _Note for Intel integrated graphics users: Only Skylake and newer Intel CPUs (pr
 - For VMware computers:
 
 ```bash
-sudo pacman -S open-vm-tools
+sudo pacman -S xorg-server mesa open-vm-tools
 sudo systemctl enable/start vmtoolsd.service
 sudo systemctl enable/start vmware-vmblock-fuse.service
 sudo pacman -S gtkmm3 # if copy and paste between host and guest does not work properly
