@@ -130,7 +130,7 @@ nano /etc/hosts # Edit the hosts file and add lines from the Arch Wiki ---> http
 ### User configuration
 
 ```bash
-passwd # Setup a password for the root account
+passwd # Setup a password for the root account (optional) 
 useradd -m gegecom83 # Create a "regular" user
 passwd gegecom83 # Setup a password for the user
 usermod -aG wheel gegecom83 # Add the user to the wheel group (for sudo usage)
