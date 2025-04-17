@@ -120,7 +120,7 @@ Server = https://arch.yourlabs.org/$repo/os/$arch
 ## Install additional packages (optional)
 
 ```bash
-sudo pacman -S firefox  htop file-roller gnome-firmware evolution gnome-terminal gnome-browser-connector gnome-themes-extra fastfetch p7zip unrar gspell gimp libreoffice-fresh 
+sudo pacman -S firefox htop file-roller gnome-firmware evolution gnome-terminal gnome-browser-connector gnome-themes-extra fastfetch p7zip unrar gspell gimp libreoffice-fresh 
 sudo pacman -S gnu-free-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-droid ttf-opensans ttf-roboto ttf-liberation ttf-dejavu # optional dependencies I need for the above packages
 sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs # tools to manage additional or foreign filesystems such as NTFS or exFAT
 sudo pacman -S gstreamer gst-plugins-bad gst-plugins-base gst-plugins-ugly gst-plugin-pipewire gstreamer-vaapi gst-plugins-good gst-libav # plugins for multimedia
