@@ -53,7 +53,7 @@ sudo pacman -S gtkmm3 # if copy and paste between host and guest does not work p
 Xfce with a few additional packages for a base system according to my personal preferences.
 
 ```bash
-sudo pacman -S  xfce4 xfce4-goodies mugshot pavucontrol gvfs xarchiver xdg-user-dirs xdg-utils pipewire pipewire-audio pipewire-pulse pipewire-jack openssh
+sudo pacman -S xfce4 xfce4-goodies mugshot pavucontrol gvfs xarchiver xdg-user-dirs xdg-utils pipewire pipewire-audio pipewire-pulse pipewire-jack openssh
  ```
 
 ### Configure start for Xfce
