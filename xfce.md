@@ -183,10 +183,8 @@ TrayIconStyle=light
 ## Custom appearance (optional)
 
 ```bash
-sudo pacman -S papirus-icon-theme qt5ct
-```
-
-```bash
+sudo pacman -S qt5ct
+yay papirus-icon-theme-git
 yay adwaita-qt5
 ```
 
