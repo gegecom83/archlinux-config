@@ -34,7 +34,7 @@ sudo pacman -S gtkmm3 # if copy and paste between host and guest does not work p
 Plasma with a few additional packages for a base system according to my personal preferences.
 
 ```bash
-sudo pacman -S plasma-meta konsole dolphin ark xdg-utils pipewire pipewire-audio pipewire-pulse pipewire-jack openssh
+sudo pacman -S plasma-meta konsole dolphin kate ark xdg-utils pipewire pipewire-audio pipewire-pulse pipewire-jack openssh
  ```
 
 ## Configure start Plasma
@@ -121,7 +121,7 @@ Server = https://arch.yourlabs.org/$repo/os/$arch
 ## Install additional packages (optional)
 
 ```bash
-sudo pacman -S  firefox kate krita kmail libreoffice-fresh fastfetch okular elisa p7zip unrar fwupd 
+sudo pacman -S  firefox krita kmail libreoffice-fresh fastfetch okular elisa p7zip unrar fwupd 
 sudo pacman -S gnu-free-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-droid ttf-opensans ttf-roboto ttf-liberation ttf-dejavu # optional dependencies I need for the above packages
 sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs # tools to manage additional or foreign filesystems such as NTFS or exFAT
 sudo pacman -S gstreamer gst-plugins-bad gst-plugins-base gst-plugins-ugly gst-plugin-pipewire gstreamer-vaapi gst-plugins-good gst-libav # plugins for multimedia
