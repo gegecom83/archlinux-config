@@ -1,7 +1,7 @@
-# Ultimate Linux bash commands
+# Linux bash commands
 
 > **Note** 
-> Use `Ctrl+f` to search keywords in desktop browsers.
+> Use `Ctrl+f` to search keywords.
   
 <div align="center">
 
