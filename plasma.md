@@ -171,7 +171,3 @@ TrayIconStyle=light
 ```bash
 sudo pacman -S qt5-declarative breeze-gtk kde-gtk-config
 ```
-
-- How to change Firefox min/max/close buttons:
-  
-By default (?), firefox uses Client Side Decorations. These cannot be managed by the window manager because CSD window decorations are drawn by the application. Fortunately, you can revert firefox to regular titlebars (in Customize, select the "Title Bar" option).
