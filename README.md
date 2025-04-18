@@ -2,6 +2,10 @@
 
 This is my personal routine to install Arch Linux
 
+- [Commands](https://github.com/gegecom83/archlinux-config/blob/main/commands.md)
+
+- [Pacman](https://github.com/gegecom83/archlinux-config/blob/main/pacman.md)
+
 ## Pre-configuration
 
 ```bash
