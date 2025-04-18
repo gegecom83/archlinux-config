@@ -311,4 +311,6 @@ Link to the installation and configuration procedure for desktop environment on 
 
 - [GNOME](https://github.com/gegecom83/archlinux-config/blob/main/gnome.md)
 
+- [Plasma](https://github.com/gegecom83/archlinux-config/blob/main/plasma.md)
+
 
