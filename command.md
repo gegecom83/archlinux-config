@@ -1,4 +1,4 @@
-# Linux bash commands
+# Commands
 
 > **Note**  
 > Use `Ctrl+f` to search keywords.
