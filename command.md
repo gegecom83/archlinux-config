@@ -1,8 +1,7 @@
 # Linux bash commands
 
-**Note** 
-Use `Ctrl+f` to search keywords.
-  
+> **Note**  
+> Use `Ctrl+f` to search keywords.
 <div align="center">
 <h2>Table</h2>
 
