@@ -1,4 +1,4 @@
-# Commands
+# Linux commands
 
 > **Note**  
 > Use `Ctrl+f` to search keywords.
