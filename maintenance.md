@@ -112,5 +112,5 @@ paccache -r
 To discard unused packages weekly:
 
 ```bash
-sudo systemctl eneable paccache.timer
+sudo systemctl enable --now paccache.timer
 ```
