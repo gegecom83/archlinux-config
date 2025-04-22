@@ -281,4 +281,6 @@ Link to the installation and configuration procedure for desktop environment on 
 
 - [Plasma](https://github.com/gegecom83/archlinux-config/blob/main/plasma.md)
 
+- [Sway](https://github.com/gegecom83/archlinux-config/blob/main/sway.md)
+
 
