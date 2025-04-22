@@ -6,6 +6,8 @@ This is my personal routine to install Arch Linux
 
 - [Package Manager](https://github.com/gegecom83/archlinux-config/blob/main/pacman.md)
 
+- [System maintenance](https://github.com/gegecom83/archlinux-config/blob/main/maintenance.md)
+
 ## Pre-configuration
 
 ```bash
@@ -211,8 +213,8 @@ systemctl enable NetworkManager # Autostart NetworkManager at boot
 ### Install and enable Bluetooth support
 
 ```bash
-sudo pacman -S bluez bluez-utils 
-sudo systemctl enable --now bluetooth # Autostart bluetooth at boot
+pacman -S bluez bluez-utils 
+systemctl enable --now bluetooth # Autostart bluetooth at boot
 ```
 
 ## Exit the system and reboot the computer
@@ -236,15 +238,6 @@ nmcli device wifi connect your_wifi_name password your_password_wifi
 
 ```bash
 sudo pacman -S devtools man-db man-pages bash-completion intel-ucode pacman-contrib # Additional useful packages and drivers. Install "amd-ucode" instead of "intel-ucode" if you have an AMD CPU
-```
-
-## Enable paccache (automatic cleaning of pacman cache)
-
-The `pacman-contrib` package provides the `paccache` script which cleans the `pacman` cache by deleting old cached packages versions.  
-To run `paccache` automatically on a weekly basis, enable the associated systemd timer:
-
-```bash
-sudo systemctl enable --now paccache.timer
 ```
 
 ## Enable fstrim (for SSDs only - optional)
@@ -276,35 +269,6 @@ Look for errors in the log files located in /var/log/, as well as high priority 
 
 ```bash
 journalctl -p 3 -xb
-```
-
-Arch Linux guest instances in VMware sometimes come up with the boot error message:
-
-```bash
-piix4_smbus 0000.00.07.0: SMBus base address uninitialized…
-```
-
-This error is being caused because VMware doesn’t actually provide that level interface for CPU access.
-
-How to fix it:
-
-```bash
-sudo nano /etc/modprobe.d/blacklist.conf
-```
-
-add the line:
-
-```bash
-blacklist i2c-piix4
-```
-
-To (re-)generate initramfs images based on all existing presets:
-
-```bash
-mkinitcpio -P
-```
-```bash
-reboot
 ```
 
 ## Base installation complete
