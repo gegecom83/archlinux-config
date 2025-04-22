@@ -73,7 +73,7 @@ input type:keyboard {
 ## Reboot (should start Sway automatically after logging)
 
 ```bash
-sudo reboot
+reboot
 ```
 
 ## Pacman Mirrorlist
