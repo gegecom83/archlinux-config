@@ -34,7 +34,7 @@ sudo pacman -S gtkmm3 # if copy and paste between host and guest does not work p
 Sway with a few additional packages for a base system according to my personal preferences.
 
 ```bash
-sudo pacman -S sway swaybg swaylock swayidle waybar dmenu brightnessctl grim slurp pavucontrol foot pipewire pipewire-audio pipewire-pulse polkit
+sudo pacman -S sway swaybg swaylock swayidle waybar dmenu brightnessctl grim slurp pavucontrol foot pipewire pipewire-audio pipewire-pulse pipewire-jack openssh polkit
 ```
 
 ### Auto start Sway when logging on TTY1
