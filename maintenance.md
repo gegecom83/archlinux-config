@@ -69,6 +69,7 @@ If a package was installed at an earlier stage, and the pacman cache was not cle
 ```bash
 sudo pacman -U file:///var/cache/pacman/pkg/package-old_version.pkg.tar.type
 ```
+
 Downgrading the kernel:
 
 ```bash
@@ -99,17 +100,10 @@ sudo pacman -Sc
 yay -Sc && yay -Yc
 ```
 
-Cleaning the package cache:
+## Enable paccache (automatic cleaning of pacman cache)
 
-- Pacman stores its downloaded packages in /var/cache/pacman/pkg/ and does not remove the old or uninstalled versions automatically. 
-
-Deletes all cached versions of installed and uninstalled packages, except for the most recent three, by default:
-
-```bash
-paccache -r
-```
-
-To discard unused packages weekly:
+The `pacman-contrib` package provides the `paccache` script which cleans the `pacman` cache by deleting old cached packages versions.  
+To run `paccache` automatically on a weekly basis, enable the associated systemd timer:
 
 ```bash
 sudo systemctl enable --now paccache.timer
