@@ -2,39 +2,22 @@
 
 ## Install graphical drivers
 
-- For NVIDIA computers (Unsupported on sway):
+Ensure you have the appropriate driver installed. For example:
 
-```bash
-sudo pacman -S nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
-```
+- Intel: mesa
 
-- For AMD computers:
+- AMD: mesa and xf86-video-amdgpu
 
-```bash
-sudo pacman -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
-```
+- NVIDIA (open-source): mesa, nvidia, and nvidia-drm (with kernel mode setting enabled)
 
-- For Intel computers:
-
-```bash
-sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
-```
-
-- For VMware computers:
-
-```bash
-sudo pacman -S mesa open-vm-tools
-sudo systemctl enable/start vmtoolsd.service
-sudo systemctl enable/start vmware-vmblock-fuse.service
-sudo pacman -S gtkmm3 # if copy and paste between host and guest does not work properly
-```
+- VMware: mesa open-vm-tools gtkmm3 (enable/start vmtoolsd.service, vmware-vmblock-fuse.service)
 
 ## Install Sway
 
 Sway with a few additional packages for a base system according to my personal preferences.
 
 ```bash
-sudo pacman -S sway swaybg swaylock swayidle waybar dmenu brightnessctl grim slurp pavucontrol foot pipewire pipewire-audio pipewire-pulse pipewire-jack openssh polkit
+sudo pacman -S sway brightnessctl foot libpulse mako polkit swaybg swayidle swaylock waybar wmenu xdg-desktop-portal-gtk xdg-desktop-portal-wlr xorg-xwayland 
 ```
 
 ### Auto start Sway when logging on TTY1
@@ -51,24 +34,11 @@ vim ~/.bash_profile
 > > export XDG_SESSION_TYPE=wayland  
 > > export QT_QPA_PLATFORM=wayland  
 > > export SDL_VIDEODRIVER=wayland  
+> > export MOZ_ENABLE_WAYLAND=1
+> > export GDK_BACKEND=wayland,x11
 > > exec sway  
 >
 > fi
-
-### Set default keymap and terminal in Sway config
-
-```bash
-sudo vim /etc/sway/config
-```
-
-```text
-[...]
-input type:keyboard {
-        xkb_layout "fr"
-        xkb_variant "azerty"
-        xkb_numlock "enabled"
-}
-```
 
 ## Reboot (should start Sway automatically after logging)
 
@@ -145,14 +115,109 @@ Server = http://arch.yourlabs.org/$repo/os/$arch
 Server = https://arch.yourlabs.org/$repo/os/$arch
 ```
 
+## Audio Setup
+
+```bash
+sudo pacman -S pipewire pipewire-audio pipewire-pulse pipewire-jack wireplumber pavucontrol
+sudo systemctl --user enable --now pipewire pipewire-audio pipewire-pulse pipewire-jack wireplumber
+```
+
+You can use pavucontrol to adjust audio settings in a GUI.
+
 ## Install additional packages
 
 ```bash
-sudo pacman -S firefox thunar thunar-archive-plugin engrampa gvfs network-manager-applet htop fwupd fastfetch p7zip unrar gspell gimp libreoffice-fresh ristretto rofi-wayland flameshot swaync nwg-displays nwg-look nwg-drawer nwg-panel blueman wl-clipboard xdg-desktop-portal xdg-desktop-portal-wlr xdg-user-dirs-gtk xdg-desktop-portal-gtk wl-clip-persist xorg-xwayland capitaine-cursors mako qt5-wayland mousepad xfce4-terminal
-sudo pacman -S polkit-gnome gnome-keyring  qt6-wayland xdg-utils wofi gnu-free-fonts noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-droid ttf-opensans ttf-roboto ttf-liberation ttf-dejavu # optional dependencies I need for the above packages
+sudo pacman -S polkit-gnome gnome-keyring firefox thunar thunar-archive-plugin engrampa gvfs p7zip unrar mousepad xfce4-terminal network-manager-applet wl-clipboard wl-clip-persist grim slurp wofi htop fastfetch rofi-wayland flameshot swaync nwg-displays nwg-look nwg-drawer nwg-panel fwupd ristretto blueman qt5-wayland xdg-utils xdg-user-dirs-gtk
 sudo pacman -S ntfs-3g fuse2 fuse2fs fuse3 exfatprogs # tools to manage additional or foreign filesystems such as NTFS or exFAT
 sudo pacman -S gstreamer gst-plugins-bad gst-plugins-base gst-plugins-ugly gst-plugin-pipewire gstreamer-vaapi gst-plugins-good gst-libav # plugins for multimedia
 ```
+
+## Basic Configuration
+
+Sway uses a configuration file located at:
+
+~/.config/sway/config
+
+If this file doesn’t exist, Sway will create it by copying the default from /etc/sway/config.
+
+To create your personal config:
+
+```bash
+mkdir -p ~/.config/sway
+cp /etc/sway/config ~/.config/sway/
+```
+
+Open it in your text editor (e.g., nano, vim) and start customizing.
+
+```bash
+vim ~/.config/sway/config
+```
+
+Set default keymap and terminal in Sway config.
+
+```text
+[...]
+input type:keyboard {
+        xkb_layout "fr"
+        xkb_variant "azerty"
+        xkb_numlock "enabled"
+}
+```
+
+Sway supports nearly all i3 keybindings. Example keybindings you might want to modify:
+
+```bash
+set $term xfce4-terminal
+bindsym  $mod+d exec rofi -show drun -show-icons
+bindsym  $mod+m exec thunar
+bindsym  $mod+e exec mousepad
+bindsym  $mod+b exec firefox
+```
+
+To autostart programs, add exec lines at the end of the config:
+
+```bash
+exec nm-applet
+exec mako
+exec waybar
+exec wl-clip-persist --clipboard regular
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec swaync
+```
+
+Use swaybg to set a wallpaper:
+
+```bash
+exec swaybg -i ~/Pictures/wallpapers/mountain.jpg -m fill
+```
+
+You can configure displays using the output directive in the config file:
+
+```bash
+output eDP-1 resolution 1920x1080 position 0,0
+output HDMI-A-1 resolution 1920x1080 position 1920,0
+```
+
+To identify display names, use:
+
+```bash
+swaymsg -t get_outputs
+```
+
+For dynamic setup without editing the config file, consider using wdisplays or sway-output-config.
+
+Use swaylock and swayidle for session security:
+```bash
+exec swayidle -w \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -c 000000'
+  ```
+  
+This configuration locks the screen after 5 minutes and turns off the display after 10 minutes.
+
+You can install themes for swaylock or build it with image support (swaylock-effects) from the AUR.
 
 ## Manage power profiles (e.g. balanced, power-saver, performance)
 
@@ -192,3 +257,4 @@ nano ~/.config/arch-update/arch-update.conf
 ```bash
 TrayIconStyle=light
 ```
+
