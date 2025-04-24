@@ -92,7 +92,7 @@ arch-chroot /mnt # Chroot in the new installed system's base on the root partiti
 ### Configure pacman
 
 ```bash
-pacman -S nano # Install my favorite editor
+pacman -S vim nano # Install editor
 nano /etc/pacman.conf # Enable "multilib" repository for 32-bit library support, the "color" and "parallel downloads" options in pacman
 ```
 
@@ -150,7 +150,7 @@ visudo # Uncomment the line that allows the wheel group members to use sudo on a
 ```
 
 > [...]  
-> %wheel ALL=(ALL) ALL  
+> %wheel ALL=(ALL:ALL) ALL  
 > [...]
 
 ### Use a more secure umask for the boot partition
