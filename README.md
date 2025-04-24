@@ -92,7 +92,7 @@ arch-chroot /mnt # Chroot in the new installed system's base on the root partiti
 ### Configure pacman
 
 ```bash
-pacman -S vim nano # Install my favorite editor
+pacman -S nano # Install my favorite editor
 nano /etc/pacman.conf # Enable "multilib" repository for 32-bit library support, the "color" and "parallel downloads" options in pacman
 ```
 
@@ -210,7 +210,7 @@ pacman -S networkmanager # Install "networkmanager" to manage my network connect
 systemctl enable NetworkManager # Autostart NetworkManager at boot
 ```
 
-### Install and enable Bluetooth support
+### Install and enable Bluetooth support (optional)
 
 ```bash
 pacman -S bluez bluez-utils 
@@ -231,7 +231,7 @@ reboot # Reboot the computer to boot into the fresh Arch install
 ## Connect to Wi-Fi (if needed)
 
 ```bash
-nmcli device wifi connect your_wifi_name password your_password_wifi
+nmcli device wifi connect "SSID" password "your_password"
 ```
 
 ## Log in with the "regular" user previously created and install additional useful packages
