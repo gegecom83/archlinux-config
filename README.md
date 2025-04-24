@@ -16,9 +16,9 @@ loadkeys fr # Change Keyboard Layout
 
 ```bash
 iwctl
-station wlan0 connect your_wifi_name
-your_password_wifi
-exit
+[iwd]# station wlan0 connect "SSID"
+[iwd]# "your_password"
+[iwd]# exit
 ```
 
 ```bash
@@ -242,7 +242,7 @@ sudo pacman -S devtools man-db man-pages bash-completion intel-ucode pacman-cont
 
 ## Enable fstrim (for SSDs only - optional)
 
-If you use SSDs, you can use `fstrim` to discard all unused blocks in the filesystem in order to improve performances.  
+If you use SSDs, you can use [fstrim](https://wiki.archlinux.org/title/Solid_state_drive#TRIM) to discard all unused blocks in the filesystem in order to improve performances.  
 You can launch it manually by running `sudo fstrim -av`, but keep in mind that it is not recommended to launch it too frequently. It is commonly approved that running it once a week is a sufficient frequency for most desktop and server systems.
 
 To launch `fstrim` automatically on a weekly basis, enable the associated systemd timer:
