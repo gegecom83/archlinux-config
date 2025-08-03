@@ -1,4 +1,4 @@
-#i3-wm
+# i3-wm
 
 ## Install Xorg and graphical drivers
 
