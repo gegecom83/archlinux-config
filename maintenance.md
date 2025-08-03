@@ -108,3 +108,21 @@ To run `paccache` automatically on a weekly basis, enable the associated systemd
 ```bash
 sudo systemctl enable --now paccache.timer
 ```
+
+## Mkinitcpio WARNING
+
+==> WARNING: consolefont: no font found in configuration
+
+```bash
+nano /etc/vconsole.conf
+```
+
+```bash
+FONT=lat2-16
+FONT_MAP=8859-2
+```
+
+==> WARNING: Possibly missing firmware for module: 'module_name'
+```bash
+yay mkinitcpio-firmware
+```
