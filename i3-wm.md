@@ -34,7 +34,7 @@ sudo pacman -S gtkmm3 # if copy and paste between host and guest does not work p
  i3-wm with a few additional packages for a base system according to my personal preferences.
 
 ```bash
-sudo pacman -S 7zip alacritty awesome-terminal-fonts brightnessctl cava dex dmenu dunst fastfetch feh firefox galculator gnome-keyring gvfs gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb i3-wm i3blocks i3lock i3status mpd mousepad network-manager-applet numlockx otf-font-awesome openssh picom pipewire-pulse playerctl polkit-gnome ranger rmpc rofi scrot thunar thunar-archive-plugin thunar-volman tumbler unzip xarchiver xdg-user-dirs xorg-xinit xorg-xrandr xss-lock zip
+sudo pacman -S 7zip alacritty awesome-terminal-fonts brightnessctl cava dex dmenu dunst fastfetch feh firefox galculator gnome-keyring gvfs gvfs-afc gvfs-mtp gvfs-nfs gvfs-smb htop i3-wm i3blocks i3lock i3status mpd mousepad network-manager-applet numlockx otf-font-awesome openssh picom pipewire-pulse playerctl polkit-gnome ranger rmpc rofi scrot thunar thunar-archive-plugin thunar-volman tumbler unzip xarchiver xdg-user-dirs xorg-xinit xorg-xrandr xss-lock zip
  ```
 
 ## Configure startx for i3
