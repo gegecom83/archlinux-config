@@ -5,19 +5,19 @@
 - For NVIDIA computers:
 
 ```bash
-sudo pacman -S xorg-server nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-icd-loader lib32-vulkan-icd-loader
+sudo pacman -S xorg-server nvidia-dkms nvidia-utils nvidia-settings vulkan-icd-loader
 ```
 
 - For AMD computers:
 
 ```bash
-sudo pacman -S xorg-server mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon vulkan-icd-loader lib32-vulkan-icd-loader
+sudo pacman -S xorg-server mesa vulkan-radeon vulkan-icd-loader
 ```
 
 - For Intel computers:
 
 ```bash
-sudo pacman -S xorg-server mesa lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-loader lib32-vulkan-icd-loader
+sudo pacman -S xorg-server mesa vulkan-intel vulkan-icd-loader
 ```
 
 - For VMware computers:
