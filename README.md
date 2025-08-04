@@ -275,11 +275,7 @@ journalctl -p 3 -xb
 
 Link to the installation and configuration procedure for desktop environment on Arch according to my preferences below (if needed):
 
-- [Xfce](https://github.com/gegecom83/archlinux-config/blob/main/xfce.md)
-
-- [GNOME](https://github.com/gegecom83/archlinux-config/blob/main/gnome.md)
-
-- [Plasma](https://github.com/gegecom83/archlinux-config/blob/main/plasma.md)
+- [i3-wm](https://github.com/gegecom83/archlinux-config/blob/main/i3-wm.md)
 
 - [Sway](https://github.com/gegecom83/archlinux-config/blob/main/sway.md)
 
