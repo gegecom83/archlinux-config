@@ -237,7 +237,7 @@ nmcli device wifi connect "SSID" password "your_password"
 ## Log in with the "regular" user previously created and install additional useful packages
 
 ```bash
-sudo pacman -S devtools man-db man-pages bash-completion intel-ucode pacman-contrib # Additional useful packages and drivers. Install "amd-ucode" instead of "intel-ucode" if you have an AMD CPU
+sudo pacman -S devtools man-db man-pages bash-completion intel-ucode pacman-contrib nano # Additional useful packages and drivers. Install "amd-ucode" instead of "intel-ucode" if you have an AMD CPU
 ```
 
 ## Enable fstrim (for SSDs only - optional)
