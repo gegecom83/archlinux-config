@@ -114,7 +114,7 @@ sudo systemctl enable --now paccache.timer
 ==> WARNING: consolefont: no font found in configuration
 
 ```bash
-nano /etc/vconsole.conf
+sudo nano /etc/vconsole.conf
 ```
 
 ```bash
