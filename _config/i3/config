@@ -1,0 +1,202 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+
+# floating
+floating_modifier $mod
+
+# window
+default_border pixel 1
+default_floating_border pixel 1
+for_window [class="^.*"] border pixel 1
+
+# gaps
+gaps inner 10
+
+# font
+font pango:Monospace 8
+
+# autostart
+# exec --no-startup-id dex --autostart --environment i3
+
+# polkit
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# compositor
+exec --no-startup-id picom
+
+# numlock
+exec --no-startup-id numlockx
+
+# notifications
+exec --no-startup-id dunst
+
+# networkmanager
+# exec --no-startup-id nm-applet
+
+# greenclip
+exec --no-startup-id greenclip daemon
+
+# player
+exec --no-startup-id playerctld daemon
+
+# wallpaper
+exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper/my_neighbor_totoro.jpg
+
+# xss-lock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3lock/lock
+
+# volume
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym F10 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym F11 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym F12 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+# multimedia
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause 
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+bindsym F7 exec --no-startup-id playerctl previous
+bindsym F8 exec --no-startup-id playerctl play-pause
+bindsym F9 exec --no-startup-id playerctl next
+
+# brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+bindsym F2 exec --no-startup-id brightnessctl set +5%
+bindsym F1 exec --no-startup-id brightnessctl set 5%-
+
+# focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating
+bindsym $mod+space focus mode_toggle
+
+# split orientation
+bindsym $mod+h split v;exec notify-send 'Split in horizontal orientation'
+bindsym $mod+v split h;exec notify-send 'Split in vertical orientation'
+
+# workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+ampersand workspace number $ws1
+bindsym $mod+eacute workspace number $ws2
+bindsym $mod+quotedbl workspace number $ws3
+bindsym $mod+apostrophe workspace number $ws4
+bindsym $mod+parenleft workspace number $ws5
+bindsym $mod+minus workspace number $ws6
+bindsym $mod+egrave workspace number $ws7
+bindsym $mod+underscore workspace number $ws8
+bindsym $mod+ccedilla workspace number $ws9
+bindsym $mod+agrave workspace number $ws10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+eacute move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+egrave move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+ccedilla move container to workspace number $ws9
+bindsym $mod+Shift+agrave move container to workspace number $ws10
+
+# resize
+mode "resize" {
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# launcher
+bindsym $mod+d exec --no-startup-id rofi run -show drun
+
+# terminal
+bindsym $mod+Return exec --no-startup-id xfce4-terminal
+
+# terminal2
+bindsym $mod+a exec --no-startup-id alacritty
+
+# file manager
+bindsym $mod+t exec --no-startup-id thunar
+
+# editor
+bindsym $mod+e exec --no-startup-id mousepad
+
+# browser
+bindsym $mod+b exec --no-startup-id firefox
+
+# rmpc
+bindsym $mod+m exec --no-startup-id ~/.config/rmpc/rmpc.sh
+
+# notify history
+bindsym $mod+n exec --no-startup-iddunstctl history-pop
+
+# screenshot
+bindsym Print exec --no-startup-id scrot ~/Pictures/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/Pictures/$(date +"%Y-%m-%d-%T")-screenshot.png"
+
+# clipboard
+bindsym $mod+c exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
+# kill
+bindsym $mod+q kill
+
+# fullscreen
+bindsym $mod+f fullscreen toggle
+
+# lock
+bindsym $mod+l exec --no-startup-id ~/.config/i3lock/lock
+
+# reload
+bindsym $mod+Shift+c reload
+
+# restart
+bindsym $mod+Shift+r restart
+
+# exit
+bindsym $mod+Shift+e exec --no-startup-id rofi -show power-menu -modi "power-menu:rofi-power-menu --choices=logout/reboot/shutdown"
+
+# i3status
+bar {
+        status_command i3status
+}
