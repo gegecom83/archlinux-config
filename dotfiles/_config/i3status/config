@@ -20,7 +20,7 @@ general {
 order += "ethernet _first_"
 # order += "battery all"
 order += "disk /"
-# order += "load"
+order += "load"
 order += "cpu_usage"
 # order += "cpu_temperature 0"
 order += "memory"
@@ -28,13 +28,13 @@ order += "volume master"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "WIFI: (%quality at %essid) %ip"
-        format_down = "WIFI: down"
+        format_up = "Wireless: (%quality at %essid) %ip"
+        format_down = "Wireless: Down"
 }
 
 ethernet _first_ {
-        format_up = "Eth: %ip (%speed)"
-        format_down = "Eth: down"
+        format_up = "Ethernet: %ip (%speed)"
+        format_down = "Ethernet: Down"
 }
 
 battery all {
@@ -42,21 +42,21 @@ battery all {
 }
 
 disk "/" {
-        format = "Disk (/): %avail"
+        format = "Free space: %avail"
 }
 
 load {
-        format = "%1min"
+        format = "Load: %1min"
 }
 
 cpu_usage {
-  format = "Cpu: %usage"
+  format = "Processor: %usage"
 }
 
-# cpu_temperature 0 {
-#         format = "Temp: %degrees °C"
-#         path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input"
-# }
+cpu_temperature 0 {
+        format = "Temperature: %degrees °C"
+        path = "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input"
+}
 
 memory {
         format = "Memory: %used | %available"
@@ -65,8 +65,8 @@ memory {
 }
 
 volume master {
-        format = "Vol: %volume"
-        format_muted = "Vol: muted (%volume)"
+        format = "Volume: %volume"
+        format_muted = "Muted: %volume"
         device = "default"
         mixer = "Master"
         mixer_idx = 0
