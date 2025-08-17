@@ -18,23 +18,17 @@ gaps inner 10
 # font
 font pango:Monospace 8
 
-# autostart
-# exec --no-startup-id dex --autostart --environment i3
-
 # polkit
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # compositor
-exec --no-startup-id picom
+# exec --no-startup-id picom
 
 # numlock
-exec --no-startup-id numlockx
+# exec --no-startup-id numlockx
 
 # notifications
 exec --no-startup-id dunst
-
-# networkmanager
-# exec --no-startup-id nm-applet
 
 # greenclip
 exec --no-startup-id greenclip daemon
@@ -43,7 +37,7 @@ exec --no-startup-id greenclip daemon
 exec --no-startup-id playerctld daemon
 
 # wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper/my_neighbor_totoro.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/my_neighbor_totoro.jpg
 
 # xss-lock
 exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3lock/lock
